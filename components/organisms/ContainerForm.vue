@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { highSchools, classes, baccalaureates } from "~/server/api/content";
-const { data, refresh } = await useFetch('/api/form')
-console.log(data.value)
+import { classes, baccalaureates } from "~/server/api/content";
+const { data } = await useFetch('/api/form')
 
 const contentClasses = [
   {
