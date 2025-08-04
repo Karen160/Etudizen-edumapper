@@ -30,4 +30,4 @@ export const baccalaureates = [
     "Général",
     "Professionnel",
     "Technologique"
-]
+];

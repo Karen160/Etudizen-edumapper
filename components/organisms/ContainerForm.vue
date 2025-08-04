@@ -1,20 +1,22 @@
 <script setup lang="ts">
-import { classes, baccalaureates } from "~/server/api/content";
+import { classes, baccalaureates } from "~/utils/content";
 const { data } = await useFetch('/api/form')
 
 const contentClasses = [
   {
     question: 'En quelle classe es-tu ?',
     answers : classes,
+    key: 'classes'
   },
   {
     question: 'Type de bac',
     answers : baccalaureates,
+    key: 'baccalaureates'
   }
 ]
 
 const contentCards = [
-  {name : 'Classes', content: contentClasses, value: data.value, isOpen: true},
+  {name : 'Classes', content: contentClasses, values: data.value, isOpen: true},
   {name: 'Spécialités'},
   {name: 'Notes'}
 ]
@@ -29,7 +31,7 @@ const contentCards = [
          :name="item.name"
          :is-open="item?.isOpen"
          :content="item?.content"
-          :value="item?.value"
+          :values="item?.values"
       />
     </Wrapper>
   </section>

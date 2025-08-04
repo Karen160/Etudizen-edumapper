@@ -18,10 +18,15 @@ const props = defineProps({
     type: String,
     required: false,
     default: 'À compléter'
+  },
+  values: {
+    type: Object,
+    required: false,
+    default: () => {}
   }
 })
 
-const {isOpen} = toRefs(props)
+const {isOpen, values} = toRefs(props)
 const isEditing = ref(isOpen.value)
 </script>
 
@@ -45,8 +50,8 @@ const isEditing = ref(isOpen.value)
           <h2 class="text-lg font-semibold text-black">
             {{ item?.question }}
           </h2>
-          <ul v-for="(tag, j) in item?.answers" :key="j">
-            <TagAnswer :name="tag" />
+          <ul class="flex items-start gap-1">
+            <TagAnswer v-for="(tag, j) in item?.answers" :key="j"  :name="tag" :is-selected="values[item.key] === tag" />
           </ul>
         </div>
       </div>
