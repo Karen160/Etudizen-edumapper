@@ -1,7 +1,7 @@
 <template>
   <header id="base-header" class="border-b-[2px]">
     <Wrapper>
-      <img src="~/public/img/logo.svg" alt="Edumapper" />
+      <img src="~/assets/img/logo.svg" alt="Edumapper" />
     </Wrapper>
   </header>
 </template>
