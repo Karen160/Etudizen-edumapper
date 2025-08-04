@@ -1,6 +1,6 @@
 <template>
-<div>
-  <CardInformative name="CardInformative" />
+<div class="tpl-form">
+  <ContainerForm />
 </div>
 </template>
 
