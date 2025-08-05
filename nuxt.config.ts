@@ -17,8 +17,4 @@ export default defineNuxtConfig({
         global: true,
       },
     ],
-    ssr: true,
-    nitro: {
-        preset: 'netlify'
-    }
 })
